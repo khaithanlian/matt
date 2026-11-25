@@ -1,0 +1,9 @@
+{
+  "name": "Bible Reader",
+  "short_name": "Bible",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f4ef",
+  "theme_color": "#172b25",
+  "icons": []
+}

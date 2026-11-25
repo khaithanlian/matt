@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172b25">
+  <meta name="description" content="An offline-ready Bible reader.">
+  <title>Bible Reader</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Bible Reader home">
+      <span class="brand-mark"></span><span> Yahweh Yahshua </span>
+    </a>
+    <div class="top-actions">
+      <button id="searchToggle" class="icon-button" aria-label="Search Bible" title="Search">⌕</button>
+      <button id="themeToggle" class="icon-button" aria-label="Toggle theme" title="Toggle theme">◐</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="side-heading">LAI SIANGTHO LIBRARY</div>
+      <label class="field-label" for="bookSelect">Book</label>
+      <select id="bookSelect"></select>
+      <div class="side-heading chapter-heading">CHAPTERS</div>
+      <div id="chapterGrid" class="chapter-grid"></div>
+      <div class="sidebar-foot">
+        <span class="status-dot"></span>
+        <span id="libraryStatus">Loading Bible…</span>
+      </div>
+    </aside>
+
+    <section class="reader">
+      <div id="searchPanel" class="search-panel" hidden>
+        <input id="searchInput" type="search" placeholder="Search words or phrases…" autocomplete="off">
+        <button id="closeSearch" class="quiet-button">Close</button>
+        <div id="searchResults" class="search-results"></div>
+      </div>
+
+      <div class="reader-toolbar">
+        <div class="breadcrumbs"><span id="crumbBook">Mattithyah</span><span class="crumb-sep">/</span><span id="crumbChapter">Chapter 1</span></div>
+        <div class="chapter-controls">
+          <button id="prevChapter" class="outline-button" aria-label="Previous chapter">←</button>
+          <button id="nextChapter" class="outline-button" aria-label="Next chapter">→</button>
+        </div>
+      </div>
+
+      <article id="chapterContent" class="chapter-content">
+        <div class="loading">Loading Bible text…</div>
+      </article>
+
+      <div class="bottom-nav">
+        <button id="prevBottom" class="text-button">← Previous chapter</button>
+        <span id="chapterPosition" class="position"></span>
+        <button id="nextBottom" class="text-button">Next chapter →</button>
+      </div>
+      <footer class="footer">Bible Reader <span>·</span> <span id="translationName"></span></footer>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
